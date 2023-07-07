@@ -18,11 +18,12 @@ app.use(cors());
 
 //*************************DB config***********************************
 // const url = 'mongodb+srv://Ravi1234:tozzTzTspTZOb3dl@cluster0.4skmkwf.mongodb.net/?retryWrites=true&w=majority'
-const uri = 'mongodb://root:password@db:27017/my_database';
-mongoose.connect(uri,{
+// const uri = 'mongodb://root:password@db:27017/my_database';
+//'mongodb://mongo:27017/whatsapp-db'
+mongoose.connect(process.env.MONGO_URI,{
     useNewUrlParser: true,
     useUnifiedTopology: true
-})
+}).catch(err => console.log(err))
 
 const db = mongoose.connection;
 

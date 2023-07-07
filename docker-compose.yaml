@@ -8,10 +8,6 @@ services:
       - ./data:/data/db
     ports:
       - "27017:27017"
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: password
-      MONGO_INITDB_DATABASE: my_database
   api:
     build:
       context: ./whatsapp-backend
@@ -20,7 +16,7 @@ services:
     ports:
       - "5000:5000"
     environment:
-      - MONGO_URI=mongodb://root:password@db:27017/my_database
+      - MONGO_URI=mongodb://db:27017/whatsapp-db
     depends_on:
       - db
   client:
