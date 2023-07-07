@@ -1,13 +1,7 @@
 version: '3'
 
 services:
-  db:
-    image: mongo
-    restart: always
-    volumes:
-      - ./data:/data/db
-    ports:
-      - "27017:27017"
+  
   api:
     build:
       context: ./whatsapp-backend
@@ -16,9 +10,8 @@ services:
     ports:
       - "5000:5000"
     environment:
-      - MONGO_URI=mongodb://db:27017/whatsapp-db
-    depends_on:
-      - db
+      - MONGO_URI='mongodb+srv://Ravi1234:tozzTzTspTZOb3dl@cluster0.4skmkwf.mongodb.net/?retryWrites=true&w=majority'
+    
   client:
     build:
       context: ./whatsapp-frontend
