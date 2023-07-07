@@ -9,7 +9,7 @@ import cors from "cors";
 
 //*************************app config**********************************
 const app = express()
-const port = process.env.PORT || 9000
+const port = process.env.PORT || 5000
 
 
 //************************middleware***********************************
@@ -17,7 +17,8 @@ app.use(express.json())
 app.use(cors());
 
 //*************************DB config***********************************
-const url = 'mongodb+srv://Ravi1234:tozzTzTspTZOb3dl@cluster0.4skmkwf.mongodb.net/?retryWrites=true&w=majority'
+// const url = 'mongodb+srv://Ravi1234:tozzTzTspTZOb3dl@cluster0.4skmkwf.mongodb.net/?retryWrites=true&w=majority'
+const uri = 'mongodb://root:password@db:27017/my_database';
 mongoose.connect(url,{
     useNewUrlParser: true,
     useUnifiedTopology: true

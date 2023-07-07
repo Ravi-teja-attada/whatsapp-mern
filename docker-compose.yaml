@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+  db:
+    image: mongo
+    restart: always
+    volumes:
+      - ./data:/data/db
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: password
+      MONGO_INITDB_DATABASE: my_database
+  api:
+    build:
+      context: ./whatsapp-backend
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "5000:5000"
+    environment:
+      - MONGO_URI=mongodb://root:password@db:27017/my_database
+    depends_on:
+      - db
+  client:
+    build:
+      context: ./whatsapp-frontend
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      - REACT_APP_API_URL=http://api:5000
+    depends_on:
+      - api
