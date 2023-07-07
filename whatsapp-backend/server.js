@@ -19,7 +19,7 @@ app.use(cors());
 //*************************DB config***********************************
 // const url = 'mongodb+srv://Ravi1234:tozzTzTspTZOb3dl@cluster0.4skmkwf.mongodb.net/?retryWrites=true&w=majority'
 const uri = 'mongodb://root:password@db:27017/my_database';
-mongoose.connect(url,{
+mongoose.connect(uri,{
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
