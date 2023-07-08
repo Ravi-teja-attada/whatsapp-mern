@@ -17,7 +17,7 @@ app.use(express.json())
 app.use(cors());
 
 //*************************DB config***********************************
-const url = 'mongodb+srv://Ravi1234:tozzTzTspTZOb3dl@cluster0.4skmkwf.mongodb.net/?retryWrites=true&w=majority'
+const url = 'mongodb+srv://Ravi1234:tozzTzTspTZOb3dl@cluster0.4skmkwf.mongodb.net/?retryWrites=true&w=majority';
 // const uri = 'mongodb://root:password@db:27017/my_database';
 mongoose.connect(url,{
     useNewUrlParser: true,
