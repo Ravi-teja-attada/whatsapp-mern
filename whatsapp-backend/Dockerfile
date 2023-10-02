@@ -9,7 +9,7 @@ RUN npm install
 
 COPY . .
 
-ENV MONGO_URI='mongodb+srv://Ravi1234:tozzTzTspTZOb3dl@cluster0.4skmkwf.mongodb.net/?retryWrites=true&w=majority'
+ENV MONGO_URI='mongodb+srv://Ravi1234:<password>@cluster0.4skmkwf.mongodb.net/?retryWrites=true&w=majority'
 
 EXPOSE 5000
 
